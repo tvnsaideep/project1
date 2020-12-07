@@ -1,0 +1,181 @@
+@media only screen and (min-width: 1024px) {
+    .imageMain {
+        background-size: cover;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    .imageMain {
+        background-size: none;
+    }
+  }
+  
+          .call-to-us {
+    position: fixed;
+    display: block;
+    bottom: 100px;
+    right: 18px;
+    margin: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-decoration: none;
+    animation: rotating 1.5s infinite;
+    background-color: #4BC2CE;
+  }
+  .call-to-us:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    display: block;
+    border: 2px solid #4BC2CE;
+    border-radius: 50%;
+    animation: squeeze 2s infinite;
+  }
+  .call-to-us:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #4BC2CE url(https://cdn0.iconfinder.com/data/icons/windows8_icons/26/phone1.png) center no-repeat;
+    border-radius: 50%;
+  }
+  .call-to-us__label {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(121, 208, 0, 1);
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    font-size: 12px;
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s ease
+  }
+  @media only screen and (min-width: 768px) {
+    .call-to-us{
+        display: none;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+      .call-to-us {
+  
+    width: 40px;
+    height: 40px;
+    bottom: 50px;
+  }
+  .call-to-us__label {
+   
+    padding-top: 10px;
+    font-size: 10px;
+  }
+  }
+  
+  .call-to-us:hover {
+      animation: none;
+  }
+  .call-to-us:hover .call-to-us__label {
+      opacity: 1;
+      z-index: 2;
+  }
+  .call-to-us:hover:before {
+      border-color: rgba(121, 208, 0, 1);
+  }
+  @keyframes squeeze {
+    0% {
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      margin-left: -5px;
+    }
+    50% {
+      width: 90px;
+      height: 90px;
+      margin-top: -47px;
+      margin-left: -47px;
+    }
+    100% {
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      margin-left: -5px;
+    }
+  }
+  @keyframes rotating {
+    0% {
+      transform: rotate(0deg);
+    }
+    30% {
+      transform: rotate(-45deg);
+    }
+    40% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-45deg);
+    }
+    65% {
+      transform: rotate(0deg);
+    }
+     100% {
+      transform: rotate(0deg);
+    }
+  }
+          .float{
+      position:fixed;
+      width:60px;
+      height:60px;
+      bottom:40px;
+      right:40px;
+      background-color:#25d366;
+      color:#FFF;
+      border-radius:50px;
+      text-align:center;
+    font-size:30px;
+      box-shadow: 2px 2px 3px #999;
+    z-index:100;
+    
+  }
+  .my-float{
+      margin-top:16px;
+  }
+  @media only screen and (min-width: 600px) {
+      .float{
+          animation: rotating 1.5s infinite;
+      }
+      .float:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    display: block;
+    border: 2px solid #48be4e;
+    border-radius: 50%;
+    animation: squeeze 2s infinite;
+  }
+      
+  }
+  @media only screen and (max-width: 600px) {
+      .float{
+      width:40px;
+      height:40px;
+      bottom:20px;
+      
+  }
+  
+  .my-float{
+      margin-top:0px;
+  }
+  }
+  
