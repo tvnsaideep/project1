@@ -22,7 +22,7 @@
                     <!-- MAIN Vav -->
                     <div class="header-nav navbar-collapse collapse nav-dark">
                         <ul class=" nav navbar-nav nav-line-animation">
-                            <li class="{{ route_id == 'home' ? 'active' : '' }}">
+                            <li class="{{ router.url == '/home' ? 'active' : '' }}">
                                 <a href="/home" >Home</a>
                               <!--  <ul class="sub-menu">
                                     <li><a href="index.html">Home 1</a></li>
@@ -31,7 +31,7 @@
                                     <li><a href="index-4.html">Home 4</a></li>                                            
                                 </ul>-->
                             </li>
-                            <li class="{{ route_id == 'about' ? 'active' : '' }}">
+                            <li class="{{ router.url == '/about' ? 'active' : '' }}">
                                 <a href="/about">About us</a>
                             </li>
                             <!--<li>
@@ -42,7 +42,7 @@
                                     <li><a href="news-masonry.html">Masonry</a></li>
                                 </ul>
                             </li>-->
-                            <li class="{{ route_id == 'works' ? 'active' : '' }}">
+                            <li class="{{ router.url == '/works' ? 'active' : '' }}">
                                 <a href="/works" >Works</a>
 
                             </li>
@@ -53,7 +53,7 @@
                                     <li><a href="post-right-sidebar.html">Right Sidebar</a></li>                                        
                                 </ul>                                    
                             </li>-->
-                            <li class="{{ route_id == 'contact' ? 'active' : '' }}">
+                            <li class="{{ router.url == '/contact' ? 'active' : '' }}">
                                 <a href="/contact">Contact us</a>
                             </li>                               
                         </ul>

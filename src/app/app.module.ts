@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { WorksComponent } from './works/works.component';
+//import { AgmCoreModule } from '@agm/core';
 
 // import { AgmCoreModule } from '@agm/core';
 

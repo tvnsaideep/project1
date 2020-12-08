@@ -12,13 +12,13 @@ export class HeaderComponent implements OnInit {
   public route_id: any='';
 
 
-  constructor(private _route: ActivatedRoute, private router: Router) { }
+  constructor(private _route: ActivatedRoute, public router: Router) { }
 
   ngOnInit(): void {
     this._route.data.subscribe(x => {
-      this.route_id=x.active
+      this.route_id=x.active;
     });
-    console.log(typeof(this.route_id));
+    //console.log(this.route_id);
   }
 
 }
