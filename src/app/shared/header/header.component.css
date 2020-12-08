@@ -1,3 +1,51 @@
 .navbar-toggle {
     margin-right: 10px;
 }
+.text-right{
+    margin-top: 10px;
+}
+.bhk {
+    margin:5px;
+    border-radius: 5%;
+}
+.bhk:active{
+    opacity: 0.6;
+}
+.addedBhk{
+    background-color: darkcyan;
+}
+.addedBhk:hover{
+    background-color: darkred;
+}
+.addedBhk:hover::before{
+    content:'X - ';
+}
+
+
+.type {
+    margin:5px;
+    border-radius: 5%;
+}
+.floor-plan {
+    margin-top:10px;
+}
+.floor-area {
+    margin-top:20px;
+}
+
+.sqft {
+    margin-left: 10px;
+    border-radius: 10px;
+    color:black;
+    border-color: #4b80bd;
+    padding: 10px;
+    font-family: fantasy;
+    font-weight: 200;
+    outline: none;
+}
+.sqft::placeholder {
+    color:grey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    text-align: right;
+}

@@ -37,7 +37,8 @@
               "src/assets/css/switcher.css",
               "src/assets/css/rsinteriors.css",
               "src/assets/plugins/revolution/revolution/css/settings.css",
-              "src/assets/plugins/revolution/revolution/css/navigation.css"
+              "src/assets/plugins/revolution/revolution/css/navigation.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               
