@@ -7,6 +7,21 @@
     outline: none;
 }
 
+@media only screen and (max-width: 767px) {
+
+    .get-touch {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 767px) {
+
+    .mobile-get-touch {
+        display: none;
+    }
+}
+
+
 .test-slide-hide {
    background: url('./../../../assets/images/kitchen.png');
    background-position: right;
