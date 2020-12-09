@@ -9363,7 +9363,7 @@ STEP NUMBER
 
 /*====COunter Section====*/
 .counter-section-one{
-	background-image:url(../images/counter-bg.jpg);
+	background-image:url(./../images/kitchen.png);
 	height:460px;
 	position:relative;
 	background-size:cover;

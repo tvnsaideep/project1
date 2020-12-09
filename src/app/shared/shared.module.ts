@@ -5,11 +5,13 @@ import { HeaderComponent } from './header/header.component';
 import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
 import { WelcomeSlideComponent } from './welcome-slide/welcome-slide.component';
 import { WhatsappComponent } from './whatsapp/whatsapp.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 
 
 
 @NgModule({
-  declarations: [FooterComponent, HeaderComponent, WhatWeDoComponent, WelcomeSlideComponent, WhatsappComponent],
+  declarations: [FooterComponent, HeaderComponent, WhatWeDoComponent, WelcomeSlideComponent, WhatsappComponent, PrivacyPolicyComponent, TermsConditionsComponent],
   imports: [
     CommonModule
   ],

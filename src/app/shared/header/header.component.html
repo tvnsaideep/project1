@@ -20,56 +20,23 @@
                         <span class="icon-bar"></span>
                     </button>                        
                     <!-- MAIN Vav -->
-                    <div class="header-nav navbar-collapse collapse nav-dark">
-                        <ul class=" nav navbar-nav nav-line-animation">
-                            <li class="{{ router.url == '/home' ? 'active' : '' }}">
-                                <a href="/home" >Home</a>
-                              <!--  <ul class="sub-menu">
-                                    <li><a href="index.html">Home 1</a></li>
-                                    <li><a href="index-2.html">Home 2</a></li>
-                                    <li><a href="index-3.html">Home 3</a></li>
-                                    <li><a href="index-4.html">Home 4</a></li>                                            
-                                </ul>-->
-                            </li>
-                            <li class="{{ router.url == '/about' ? 'active' : '' }}">
-                                <a href="/about">About us</a>
-                            </li>
-                            <!--<li>
-                                <a href="javascript:;" >Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="news-grid.html">Grid</a></li>
-                                    <li><a href="news-listing.html">Listing</a></li>
-                                    <li><a href="news-masonry.html">Masonry</a></li>
-                                </ul>
-                            </li>-->
-                            <li class="{{ router.url == '/works' ? 'active' : '' }}">
-                                <a href="/works" >Works</a>
-
-                            </li>
-                            <!--<li>
-                                <a href="javascript:;" >Blog detail</a>
-                                <ul class="sub-menu">
-                                    <li><a href="post-gallery.html">Gallery</a></li>
-                                    <li><a href="post-right-sidebar.html">Right Sidebar</a></li>                                        
-                                </ul>                                    
-                            </li>-->
-                            <li class="{{ router.url == '/contact' ? 'active' : '' }}">
-                                <a href="/contact">Contact us</a>
-                            </li>                               
-                        </ul>
+                    <div class="header-nav navbar-collapse collapse nav-dark" style="text-align: right;font-weight: 400;font-size: 120%;">
+                                                                     
+                       
+                        <a href="tel:+919866121744" >+91-9866121744</a>
                     </div>
                 </div>
                 <div class="wt-header-right ">
-                    <div class="bg-primary wt-header-right-child">                              
+                    <div class="wt-header-right-child">                              
                         <!-- ETRA Nav -->
                         <a href="tel:+919866121744" class="call-to-us">
                             <div class="call-to-us__label">Call Us</div>
                           </a>
 
-                        <div class="extra-nav">
-                            <div class="extra-cell">
-                                <div class="right-arrow-btn">
-                                    <button type="button" class="btn-open contact-slide-show text-white notification-animate"><i class="fa fa-angle-left"></i></button>
+                        <div >
+                            <div >
+                                <div style="outline: none;">
+                                    <button type="button" class="btn btn-info get-touch btn-open contact-slide-show text-white notification-animate">Get In Touch</button>
                                 </div>                                         
                             </div>
                          </div>
@@ -119,21 +86,21 @@
                                     <div class="icon-xs"><i class="flaticon-smartphone  icon-shake"></i></div>
                                     <div class="icon-content">
                                         <h5 class="m-t0 font-weight-500">Phone number</h5>
-                                        <p>(456) 789 10 12</p>
+                                        <p>+91-9866121744</p>
                                     </div>
                                 </div>
                                 <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
                                     <div class="icon-xs"><i class="flaticon-email  icon-shake"></i></div>
                                     <div class="icon-content">
                                         <h5 class="m-t0 font-weight-500">Email address</h5>
-                                        <p>demo@gmail.com</p>
+                                        <p>rsinteriors309@gmail.com</p>
                                     </div>
                                 </div>
                                 <div class="wt-icon-box-wraper left icon-shake-outer">
                                     <div class="icon-xs"><i class="flaticon-placeholder  icon-shake"></i></div>
                                     <div class="icon-content">
                                         <h5 class="m-t0 font-weight-500">Address info</h5>
-                                        <p>55/11 Land Street, Modern New Yourk City, USA</p>
+                                        <p>Kavali</p>
                                     </div>
                                 </div>
                             </div>                                        
@@ -159,7 +126,7 @@
                                 <div class="m-b30">
                                     <!-- TITLE START -->
                                     <div class="section-head text-left">
-                                        <h4 class="m-b5">Get Quote</h4>
+                                        <h4 class="m-b5">Get Free Quote</h4>
                                     </div>
                                     <!-- TITLE END --> 
                                     <div class="floor-plan" >
@@ -181,10 +148,13 @@
                                         <span class="spin"></span>
                                     </div>
                                     <div class="text-right">
-                                        <button class="btn-half site-button m-b15" (click)="sendQuote()">
+                                        <button class="btn-half site-button m-b15" (click)="sendQuote()" [disabled]="!bhkBtnClick || !typeBtnClick">
                                               <span>Get Quote</span>
                                         </button>
                                     </div>
+                                </div>
+                                <div class="happy-customers">
+                                        <img src="./../../../assets/images/home.png">
                                 </div>
                             </div>                                      
                          </div>

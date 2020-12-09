@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit {
   btnStatus3=false;
   btnTypeStatus1=false;
   btnTypeStatus2=false;
+  disableQuoteButton=true;
 
 
   constructor(private _route: ActivatedRoute, public router: Router, private toastr: ToastrService) { }
@@ -31,6 +32,10 @@ export class HeaderComponent implements OnInit {
       this.route_id=x.active;
     });
     //console.log(this.route_id);
+    if(this.bhk && this.area && this.type){
+      this.disableQuoteButton=false;
+    }
+
   }
 
   addBhk(val:any){
@@ -100,16 +105,16 @@ export class HeaderComponent implements OnInit {
     
   }
   sendQuote(){
-    console.log(this.bhk);
-    console.log(this.type);
+    //console.log(this.bhk);
+    //console.log(this.type);
     this.area=(document.getElementById('area')as HTMLInputElement).value;
-    console.log(this.area);
+    //console.log(this.area);
     //this.router.navigateByUrl('/about');
-    this.toastr.success("We'll Reach Out To You Shortly!", "Thankyou !");
-    setTimeout(function(){
-      location.reload();
-    },5000);
-    
+      console.log(true)
+      this.toastr.success("We'll Reach Out To You Shortly!", "Thankyou !");
+        setTimeout(function(){
+          location.reload();
+        },5000);    
   }
 
 }
