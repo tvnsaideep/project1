@@ -7,15 +7,20 @@ import { WelcomeSlideComponent } from './welcome-slide/welcome-slide.component';
 import { WhatsappComponent } from './whatsapp/whatsapp.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import {
+  FormsModule
+} from '@angular/forms';
+
 
 
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent, WhatWeDoComponent, WelcomeSlideComponent, WhatsappComponent, PrivacyPolicyComponent, TermsConditionsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
-  exports:[
+  exports: [
     HeaderComponent,
     FooterComponent,
     WhatWeDoComponent,

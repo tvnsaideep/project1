@@ -11,9 +11,13 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { WorksComponent } from './works/works.component';
 import { ToastrModule } from 'ngx-toastr';
-//import { AgmCoreModule } from '@agm/core';
 
-// import { AgmCoreModule } from '@agm/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
+import { FormsModule }   from '@angular/forms';
+import { DataService } from './services/data.service'
 
 @NgModule({
   declarations: [
@@ -28,12 +32,15 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
-    ToastrModule.forRoot()
+    FormsModule,
+    ToastrModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyBgSRJk-HB5VTV-BDoPAqSLDP_TbuRIAsMng se'
     // })
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
