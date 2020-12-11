@@ -1,12 +1,19 @@
 <p>add-project works!</p>
 <button (click)="signOut()">Logout</button>
 
-<div class="form-group col-12">
-    <input type="file"
-    id="file"
-    #userPhoto
-    (change)="onFileSelected($event)"
-    name="image"
-    autocomplete="off"
-    />
-   </div>
+
+<form>
+    <input type="file" (change)="save($event)" multiple="multiple">
+    <br>
+
+</form>
+
+
+
+
+<ul>
+    <h1>Images are:</h1>
+    <li  *ngFor="let image of images; let i = index">
+      <img src="{{image.imageUrl}}">
+    </li>
+  </ul>

@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { map, finalize } from "rxjs/operators";
 import { Observable } from 'rxjs';
 import { AuthService } from './../../services/auth.service'
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-add-project',
@@ -14,13 +15,13 @@ import { AuthService } from './../../services/auth.service'
   styleUrls: ['./add-project.component.css']
 })
 export class AddProjectComponent implements OnInit {
- 
-  title = "cloudsSorage";
-  selectedFile?: File ;
-  fb?:any;
-  downloadURL?: Observable<string>;
 
-  constructor(private authService: AuthService, private storage: AngularFireStorage, public router: Router, private toastr: ToastrService, private firebaseAuth: AngularFireAuth) {
+  selectedFile?: File;
+  fb?: any;
+  downloadURL?: Observable<string>;
+  images: any[] = [];
+
+  constructor(private authService: AuthService, private firestore: AngularFirestore, private storage: AngularFireStorage, public router: Router, private toastr: ToastrService, private firebaseAuth: AngularFireAuth) {
     this.firebaseAuth.authState.subscribe(auth => {
       if (!auth) {
         this.router.navigateByUrl('/login');
@@ -30,38 +31,58 @@ export class AddProjectComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-
-  onFileSelected(event: { target: { files: any[]; }; }) {
-    var n = Date.now();
-    const file = event.target.files[0];
-    const filePath = `RoomsImages/${n}`;
-    const fileRef = this.storage.ref(filePath);
-    const task = this.storage.upload(`RoomsImages/${n}`, file);
-    task
-      .snapshotChanges()
-      .pipe(
-        finalize(() => {
-          this.downloadURL = fileRef.getDownloadURL();
-          this.downloadURL.subscribe(url => {
-            if (url) {
-              this.fb = url;
-            }
-            console.log(this.fb);
-          });
-        })
-      )
-      .subscribe(url => {
-        if (url) {
-          console.log(url);
-        }
+    this.firestore
+      .collection("images")
+      .get()
+      .subscribe((ss) => {
+        ss.docs.forEach((doc) => {
+          this.images.push(doc.data());
+          console.log(this.images);
+        });
       });
   }
 
-  public signOut: any = () => {
+  save(event: any): void {
 
-    this.authService.logout()
+    var selectedFiles = event.target.files;
+
+    for (var i = 0; i < selectedFiles.length; i++) {
+
+      var n = Date.now();
+      const filePath = `InteriorImages/${n}`;
+      const fileRef = this.storage.ref(filePath);
+      const file = selectedFiles[i];
+      const task = this.storage.upload(`InteriorImages/${n}`, file);
+      task
+        .snapshotChanges()
+        .pipe(
+          finalize(() => {
+            this.downloadURL = fileRef.getDownloadURL();
+            this.downloadURL.subscribe(url => {
+              if (url) {
+                this.fb = url;
+                //post image inside the db
+                this.firestore.collection('images').add({
+                  timestamp: Date.now(),
+                  imageUrl: url,
+                })
+              }
+            });
+          })
+        )
+        .subscribe(url => {
+          if (url) {
+            console.log("Hey" + url);
+          }
+        });
+    }
+
 
   }
+
+
+  public signOut: any = () => {
+    this.authService.logout()
+  }
+
 }
