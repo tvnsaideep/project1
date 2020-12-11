@@ -1,0 +1,12 @@
+<p>add-project works!</p>
+<button (click)="signOut()">Logout</button>
+
+<div class="form-group col-12">
+    <input type="file"
+    id="file"
+    #userPhoto
+    (change)="onFileSelected($event)"
+    name="image"
+    autocomplete="off"
+    />
+   </div>
