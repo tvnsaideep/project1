@@ -17,9 +17,9 @@ import emailjs from 'emailjs-com';
 export class HeaderComponent implements OnInit {
 
   public route_id: any = '';
-  public bhk = '';
-  public area?: number;
-  public type = '';
+  public bhk='';
+  public area?:number;
+  public type='';
   bhkBtnClick = false;
   typeBtnClick = false;
   btnStatus1 = false;
@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
   btnTypeStatus1 = false;
   btnTypeStatus2 = false;
   disableQuoteButton = true;
+  mobile:any;
 
   public quote?: Observable<Quote>;
   public detail?: Observable<Details>;
@@ -125,7 +126,7 @@ export class HeaderComponent implements OnInit {
       email: this.email,
       text: this.text
     }
-
+    
     this.dataService.postDetails(detail);
 
     
@@ -145,9 +146,9 @@ export class HeaderComponent implements OnInit {
 
     this.toastr.success("We'll Reach Out To You Shortly!", "Thankyou !");
 
-    setTimeout(() => {
-      this.router.navigate(['/about']);
-    }, 1000);
+    (document.getElementById('name')as HTMLInputElement).value='';
+    (document.getElementById('email')as HTMLInputElement).value='';
+    (document.getElementById('message')as HTMLInputElement).value=''
 
   }
 
@@ -156,19 +157,18 @@ export class HeaderComponent implements OnInit {
     let quote = {
       floor: this.bhk,
       area: this.area,
-      type: this.type
+      type: this.type,
+      email:this.email,
+      mobile:this.mobile
     }
 
     this.dataService.postQuote(quote);
 
     this.toastr.success("We'll Reach Out To You Shortly!", "Thankyou !");
-
-    setTimeout(() => {
-      this.router.navigateByUrl('/about');
-    }, 1000);
-
-
-    //this.router.navigateByUrl('/about');
+    setTimeout(function(){
+      location.reload();
+    },3000)
+          //this.router.navigateByUrl('/about');
 
   }
 }

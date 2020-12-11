@@ -9360,6 +9360,11 @@ STEP NUMBER
     bottom: -90px;
 }
 }
+@media only screen and (max-width:768px) {
+	 .counter-section-one{
+		 display: none;
+	 }
+	}
 
 /*====COunter Section====*/
 .counter-section-one{

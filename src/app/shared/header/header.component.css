@@ -1,5 +1,9 @@
 .site-button:disabled{
     background-color: dimgrey;
+    cursor: not-allowed;
+}
+.hide-details{
+    display:none;
 }
 .get-touch {
     margin-right:10px;

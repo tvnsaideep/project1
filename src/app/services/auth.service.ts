@@ -5,6 +5,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Cookie } from 'ng2-cookies/ng2-cookies';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +15,13 @@ export class AuthService {
 
   user?: firebase.default.User;
 
-  constructor(private firebaseAuth: AngularFireAuth,public router:Router) {
+  constructor(private firebaseAuth: AngularFireAuth,public router:Router,private toastr:ToastrService) {
     this.firebaseAuth.authState.subscribe(auth => {
       if (auth) {
         this.user = auth;
-      } else {
 
+      } else {
+        
       }
     })
   }
@@ -29,10 +31,10 @@ export class AuthService {
     this.firebaseAuth
       .signInWithEmailAndPassword(cred.email, cred.password)
       .then(value => {
-        console.log('Nice, it worked!');
+        this.toastr.success("Logged In!")
       })
       .catch(err => {
-        console.log('Something went wrong:', err.message);
+        this.toastr.warning("Incorrect Auth Details !","Failed !")
       });
   }
 
