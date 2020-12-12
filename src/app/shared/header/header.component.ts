@@ -169,6 +169,11 @@ export class HeaderComponent implements OnInit {
       cust_email: quote.email,
       mobile: quote.mobile,
       houseDetails: `BHK-${quote.bhk}, Area-${quote.area} sq.ft, Type- ${quote.type}`,
+      },"user_gp55zyXsSQMxOKGvef1Fl")
+      .then((response) => {
+         console.log('SUCCESS!', response.status, response.text);
+      }, (err) => {
+         console.log('FAILED...', err);
       });
 
     this.toastr.success("We'll Reach Out To You Shortly!", "Thankyou !");
