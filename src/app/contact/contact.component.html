@@ -56,6 +56,7 @@
                                     <div class="icon-content">
                                         <h4>Phone number</h4>
                                         <h5>+91 9866121744</h5>
+                                        <h5>+91 7093793010</h5>
                                     </div>
                                 </div>
                             </div>
@@ -94,27 +95,27 @@
                             <h2>Get In Touch</h2>
                         </div>
                         <!-- TITLE END -->
-                        <form class="contact-form cons-contact-form" method="post"
-                            action="http://thewebmax.com/intoriza/form-handler.php">
+                        <form class="contact-form cons-contact-form" #saveForm="ngForm" (ngSubmit)="saveDetails()">
                             <div class="contact-one">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6">
                                         <div class="form-group">
-                                            <input name="username" type="text" required class="form-control"
-                                                placeholder="Name">
+                                            <input type="text" class="form-control"
+                                                placeholder="Name"  name="name" [(ngModel)]="name" id="name" required>
                                             <span class="spin"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="form-group">
-                                            <input name="email" type="text" class="form-control" required
-                                                placeholder="Email">
+                                            <input  type="text" class="form-control" required
+                                                placeholder="Email" name="email" [(ngModel)]="email" id="email" required>
                                             <span class="spin"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea name="message" rows="4" class="form-control " required
+                                            <textarea  rows="4" class="form-control " name="text"
+                                             [(ngModel)]="text" id="message" required
                                                 placeholder="Message"></textarea>
                                             <span class="spin"></span>
                                         </div>

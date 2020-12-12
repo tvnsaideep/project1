@@ -20,6 +20,7 @@ export class AddProjectComponent implements OnInit {
   fb?: any;
   downloadURL?: Observable<string>;
   images: any[] = [];
+  uploadStatus=false;
 
   constructor(private authService: AuthService, private firestore: AngularFirestore, private storage: AngularFireStorage, public router: Router, private toastr: ToastrService, private firebaseAuth: AngularFireAuth) {
     this.firebaseAuth.authState.subscribe(auth => {
@@ -37,14 +38,19 @@ export class AddProjectComponent implements OnInit {
       .subscribe((ss) => {
         ss.docs.forEach((doc) => {
           this.images.push(doc.data());
-          console.log(this.images);
+          //console.log(this.images);
         });
       });
   }
 
   save(event: any): void {
-
+    //console.log(event)
     var selectedFiles = event.target.files;
+    //console.log(selectedFiles.length)
+   if(selectedFiles){
+     this.uploadStatus=true;
+   }
+
 
     for (var i = 0; i < selectedFiles.length; i++) {
 
@@ -77,12 +83,27 @@ export class AddProjectComponent implements OnInit {
         });
     }
 
-
+    //console.log(selectedFiles.length)
+    //console.log(this.uploadStatus)
   }
 
 
   public signOut: any = () => {
     this.authService.logout()
+  }
+
+  savemsgReload(){
+    if(this.uploadStatus){
+          this.toastr.success('Images added','Success!');
+
+        setTimeout(function(){
+          location.reload();
+        },3000)
+    }
+    else{
+      this.toastr.warning('Please add one or more Images to upload',"Warning!")
+    }
+    
   }
 
 }

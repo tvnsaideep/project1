@@ -1,9 +1,14 @@
-<p>add-project works!</p>
-<button (click)="signOut()">Logout</button>
+<div class="logoutContainer">
+  <div class="logout">
+    <button (click)="signOut()" class="btn btn-primary">Logout</button>
+  </div>
+</div>
+
+
 <div class="wrapper">
   <header>
-    <h1>Stock photo</h1>
-    <span>ID: 5988014</span>
+    <h1>Project Photos</h1>
+    <span>Upload</span>
   </header>
   
   <div class="ways">
@@ -11,71 +16,51 @@
       <li class="active">
         submit
       </li>
-      <li>
-        discussion
-      </li>
     </ul>
   </div>
   
   <div class="sections">
     
+    
     <section class="active">
       <input type="text" placeholder="Title" id="title"/>
-      <select id="category">
-        <option value="summmer">summer</option>
-        <option value="winter">winter</option>
-        <option value="working">working</option>
-        <option value="road">road</option>
-      </select>
-      
-      <div class="select-option">
-        <div class="head">Category</div>
-        <div class="option"></div>
-      </div>
       
       
-      <div class="images">
-        <div class="pic">
-          add
+      <a class="fileUpload" (click)="fileUpload.click()" >
+        <div class="images">
+          <div class="pic">
+            <label>
+              <input type="file" (change)="save($event)"  multiple="multiple" style="display:none" #fileUpload>
+              Add
+          </label>
+          </div>
         </div>
-      </div>
+
+      </a>
+      
       
       
     </section>
 
-    <section>
-      <input type="text" placeholder="Topic" id="topic"/>
-      <textarea placeholder="something..." id="msg"></textarea>
-    </section>
-  
   </div>
   
   <footer>
-    <ul>
-      <li><span id="reset">reset</span></li>
-      <li><span id="send">send</span></li>
-    </ul>
+ <button (click)="savemsgReload()" class="btn btn-primary"><span id="send">Upload</span></button>
+   
   </footer> 
   
 </div>
 <div class="notification"></div>
-<footer>
-  Inspiration: <a href="https://dribbble.com/shots/2092775-Create-a-new-collection"><i class="fa fa-dribbble" aria-hidden="true"></i>dribbble</a>
-</footer>
 
 
-<form>
-    <input type="file" (change)="save($event)" multiple="multiple">
-    <br>
-
-</form>
-
-
-
-
+<!--
 <ul>
-    <h1>Images are:</h1>
-    <li  *ngFor="let image of images; let i = index">
-      <img src="{{image.imageUrl}}">
-    </li>
-  </ul>
+  <h1>Images are:</h1>
+  <li  *ngFor="let image of images; let i = index">
+    <img src="{{image.imageUrl}}">
+  </li>
+</ul>-->
+
+
+
+

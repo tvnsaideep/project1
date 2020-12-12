@@ -5,6 +5,19 @@ body {
     padding: 20px;
     position: relative;
   }
+  .fileUpload{
+    background: none;
+    border: none;
+  }
+  .logoutContainer {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+  }
+  .logoutContainer .logout {
+    justify-content: flex-end;
+    display: flex;
+  }
   
   .wrapper  {
     background-color: #fff;

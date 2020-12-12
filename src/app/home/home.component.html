@@ -380,18 +380,17 @@
                 <div class="section-content">
                     <div class="owl-carousel owl-carousel-filter  owl-btn-bottom-center">
                         <!-- COLUMNS 1 -->
+                        <div class="item" *ngFor="let image of images">
+                            <div class="line-filter-outer bg-cover"
+                                style="background-image:url({{image.imageUrl}});">
+                                
+                            </div>
+                        </div>
+
                         <div class="item">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url(./../../assets/images/project/1.jpg);">
-                                <div class="hover-effect-1">
-                                    <div class="hover-effect-content">
-                                        <h4 class="m-t0 m-b25">intoriza Design, corporate and retail architecture</h4>
-                                        <p>When an unknown printer took a galley of type and scrambled it to make a type
-                                            specimen book.</p>
-                                        <a href="project-detail.html" class="site-button-link"
-                                            data-hover="Read More">Read More</a>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -399,15 +398,7 @@
                         <div class="item">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url(./../../assets/images/project/2.jpg);">
-                                <div class="hover-effect-1">
-                                    <div class="hover-effect-content">
-                                        <h4 class="m-t0 m-b25">Distinctive designs for distinctive interiors.</h4>
-                                        <p>Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur
-                                            quibusd veritatis quisquam laboriosam</p>
-                                        <a href="project-detail.html" class="site-button-link"
-                                            data-hover="Read More">Read More</a>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -415,15 +406,7 @@
                         <div class="item">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url(./../../assets/images/project/3.jpg);">
-                                <div class="hover-effect-1">
-                                    <div class="hover-effect-content">
-                                        <h4 class="m-t0 m-b25">A small efficient interior design team.</h4>
-                                        <p>It was popularised in the 1960s with the release of Letraset sheets
-                                            containing Lorem Ipsum passages.</p>
-                                        <a href="project-detail.html" class="site-button-link"
-                                            data-hover="Read More">Read More</a>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -431,15 +414,7 @@
                         <div class="item">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url(./../../assets/images/project/4.jpg);">
-                                <div class="hover-effect-1">
-                                    <div class="hover-effect-content">
-                                        <h4 class="m-t0 m-b25"> Interiors inspired by innovation.</h4>
-                                        <p>Letraset sheets containing Lorem Ipsum passages, and more recently with
-                                            desktop publishing software.</p>
-                                        <a href="project-detail.html" class="site-button-link"
-                                            data-hover="Read More">Read More</a>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </div>
 
@@ -447,15 +422,7 @@
                         <div class="item">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url(./../../assets/images/project/5.jpg);">
-                                <div class="hover-effect-1">
-                                    <div class="hover-effect-content">
-                                        <h4 class="m-t0 m-b25">Bringing great design home.</h4>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It
-                                            has survived not only five centuries.</p>
-                                        <a href="project-detail.html" class="site-button-link"
-                                            data-hover="Read More">Read More</a>
-                                    </div>
-                                </div>
+                             
                             </div>
                         </div>
 
@@ -463,15 +430,7 @@
                         <div class="item">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url(./../../assets/images/project/6.jpg);">
-                                <div class="hover-effect-1">
-                                    <div class="hover-effect-content">
-                                        <h4 class="m-t0 m-b25">We design thoughtful, livable spaces.</h4>
-                                        <p>It has survived not only five centuries, but also the leap into electronic
-                                            typesetting, remaining essentially unchanged.</p>
-                                        <a href="project-detail.html" class="site-button-link"
-                                            data-hover="Read More">Read More</a>
-                                    </div>
-                                </div>
+                            
                             </div>
                         </div>
 
@@ -492,7 +451,7 @@
                             <span class="font-18 text-primary text-uppercase">Interior Desion</span>
                             <h4 class="wt-tilte m-tb20">We are architects, planners & designers out to change<br> the
                                 world.</h4>
-                            <div class="video-section-content">
+                            <!--<div class="video-section-content">
                                 <div class="video-section-left">
                                     <a href="https://player.vimeo.com/video/34741214?color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0"
                                         class="mfp-video play-now">
@@ -504,7 +463,7 @@
                                     <a href="https://player.vimeo.com/video/34741214?color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0"
                                         class="mfp-video font-weight-600 text-uppercase">Play Video</a>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -667,7 +626,7 @@
                         </div>
                     </div>
 
-                    <!-- COLUMNS 11 -->
+                    <!-- COLUMNS 11 --
                     <div class="masonry-item  cat-3 col-md-3 col-sm-6 m-b30">
                         <div class="wt-box   work-hover-content">
                             <div class="wt-thum-bx img-center-icon">
@@ -680,15 +639,22 @@
                         </div>
                     </div>
 
-                    <!-- COLUMNS 11 -->
+                    <-- COLUMNS 11 -->
                    
                 </div>
                 <!-- GALLERY CONTENT END -->
 
             </div>
             <!-- OUR WORK CONTENT END  -->
+            <a class="btn-open contact-slide-show text-white notification-animate">
+                <div class="section-full small-device p-t80 p-b80 bg-white bg-repeat banner-footer" 
+                style="background-image:url(./../../assets/images/banner/banner1.png);background-size: 100% 100%;background-repeat: no-repeat;">
 
-            <!-- TESTIMONIAL SECTION START -->
+           </div>
+            </a>
+           
+
+            <!-- TESTIMONIAL SECTION START 
             <div class="section-full small-device  p-t80 p-b80 bg-white bg-repeat"
                 style="background-image:url(./../../assets/images/background/ptn-1.png)">
                 <div class="container">
@@ -763,7 +729,7 @@
                     </div>
                 </div>
             </div>
-            <!-- TESTIMONIAL SECTION END -->
+            < TESTIMONIAL SECTION END -->
 
 
         </div>

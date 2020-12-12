@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  images: any[] = [];
+
+  constructor(private firestore:AngularFirestore) { }
 
   ngOnInit(): void {
+    this.firestore
+      .collection("images")
+      .get()
+      .subscribe((ss) => {
+        ss.docs.forEach((doc) => {
+          this.images.push(doc.data());
+          console.log(this.images[0].imageUrl);
+        });
+      });
   }
 
   callFunction(){
