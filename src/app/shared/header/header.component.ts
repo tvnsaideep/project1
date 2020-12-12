@@ -155,7 +155,7 @@ export class HeaderComponent implements OnInit {
   saveQuote() {
 
     let quote = {
-      floor: this.bhk,
+      bhk: this.bhk,
       area: this.area,
       type: this.type,
       email:this.email,
@@ -163,6 +163,13 @@ export class HeaderComponent implements OnInit {
     }
 
     this.dataService.postQuote(quote);
+
+    emailjs.send("service_rsinteriors","template_gar58l5",{
+      name: quote.email?.split("@")[0],
+      cust_email: quote.email,
+      mobile: quote.mobile,
+      houseDetails: `BHK-${quote.bhk}, Area-${quote.area} sq.ft, Type- ${quote.type}`,
+      });
 
     this.toastr.success("We'll Reach Out To You Shortly!", "Thankyou !");
     setTimeout(function(){
