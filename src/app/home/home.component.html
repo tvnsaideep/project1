@@ -376,10 +376,16 @@
                     </div>
                     <!-- TITLE END -->
                 </div>
-                <!-- IMAGE CAROUSEL START -->
+                <div class="section-content">
+                    <ng-image-slider [images]="imageUrls"
+                    [infinite]="true"
+                    [autoSlide]="1"
+                    [imageSize]="{width:'400px',height:'50%'}" #nav></ng-image-slider>
+                </div>
+                <!-- IMAGE CAROUSEL START -
                 <div class="section-content">
                     <div class="owl-carousel owl-carousel-filter  owl-btn-bottom-center">
-                        <!-- COLUMNS 1 -->
+                        <-- COLUMNS 1 --
                         <div class="item" *ngFor="let image of images">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url({{image.imageUrl}});">
@@ -394,7 +400,7 @@
                             </div>
                         </div>
 
-                        <!-- COLUMNS 2 -->
+                        <-- COLUMNS 2 --
                         <div class="item">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url(./../../assets/images/project/2.jpg);">
@@ -402,7 +408,7 @@
                             </div>
                         </div>
 
-                        <!-- COLUMNS 3 -->
+                 
                         <div class="item">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url(./../../assets/images/project/3.jpg);">
@@ -410,7 +416,7 @@
                             </div>
                         </div>
 
-                        <!-- COLUMNS 4 -->
+                     
                         <div class="item">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url(./../../assets/images/project/4.jpg);">
@@ -418,7 +424,7 @@
                             </div>
                         </div>
 
-                        <!-- COLUMNS 5 -->
+
                         <div class="item">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url(./../../assets/images/project/5.jpg);">
@@ -426,7 +432,6 @@
                             </div>
                         </div>
 
-                        <!-- COLUMNS 6 -->
                         <div class="item">
                             <div class="line-filter-outer bg-cover"
                                 style="background-image:url(./../../assets/images/project/6.jpg);">
@@ -438,7 +443,7 @@
                 </div>
 
             </div>
-            <!-- PROJECT SECTION END -->
+            <- PROJECT SECTION END -->
 
             <app-what-we-do></app-what-we-do>
 
@@ -645,13 +650,13 @@
                 <!-- GALLERY CONTENT END -->
 
             </div>
-            <!-- OUR WORK CONTENT END  -->
+            <!-- OUR WORK CONTENT END  -
             <a class="btn-open contact-slide-show text-white notification-animate">
                 <div class="section-full small-device p-t80 p-b80 bg-white bg-repeat banner-footer" 
                 style="background-image:url(./../../assets/images/banner/banner1.png);background-size: 100% 100%;background-repeat: no-repeat;">
 
            </div>
-            </a>
+            </a>-->
            
 
             <!-- TESTIMONIAL SECTION START 

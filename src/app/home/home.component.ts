@@ -9,6 +9,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class HomeComponent implements OnInit {
 
   images: any[] = [];
+  imageUrls:any[]=[];
 
   constructor(private firestore:AngularFirestore) { }
 
@@ -19,9 +20,16 @@ export class HomeComponent implements OnInit {
       .subscribe((ss) => {
         ss.docs.forEach((doc) => {
           this.images.push(doc.data());
-          console.log(this.images[0].imageUrl);
+       // console.log(this.images);
         });
+        this.images.map(x => this.imageUrls.push({image:x.imageUrl,thumbImage:x.imageUrl}))
+        //console.log(this.imageUrls)
       });
+
+      ;
+
+     
+      
   }
 
   callFunction(){

@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
 
   public quote?: Observable<Quote>;
   public detail?: Observable<Details>;
+  priceInfo:any;
 
   public name?: string;
   public email?: string;
@@ -162,13 +163,33 @@ export class HeaderComponent implements OnInit {
       mobile:this.mobile
     }
 
+    if(quote.bhk=='1 BHK') {
+      this.priceInfo = `For 1 BHK Designing: 7500, 
+                        FALSE CEILING - 3000, 
+                        Total Price - 10500 Rs/-
+                        (Pooja Complementary)` ;
+    }
+    else if (quote.bhk=='2 BHK') {
+      this.priceInfo = `For 2 BHK Designing: 10000, 
+      FALSE CEILING - 4000, 
+      Total Price - 14000 Rs/- 
+      (Pooja Complementary)` ;
+    }
+    else {
+      this.priceInfo = `For 3 BHK Designing: 12500, 
+      FALSE CEILING - 4000, 
+      Total Price - 16500 Rs/- 
+      (Pooja Complementary & Discount of Rupees 1000)` ;
+    }
+
     this.dataService.postQuote(quote);
 
     emailjs.send("service_rsinteriors","template_gar58l5",{
       name: quote.email?.split("@")[0],
-      cust_email: quote.email,
+      custEmail: quote.email,
       mobile: quote.mobile,
       houseDetails: `BHK-${quote.bhk}, Area-${quote.area} sq.ft, Type- ${quote.type}`,
+      totalPrice: this.priceInfo
       },"user_gp55zyXsSQMxOKGvef1Fl")
       .then((response) => {
          console.log('SUCCESS!', response.status, response.text);

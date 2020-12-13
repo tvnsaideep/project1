@@ -2,3 +2,15 @@
     width: 100%;
     cursor: pointer;
 }
+.slider-content {
+    overflow: hidden;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider-content::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE and Edge */
+  .section-content {
+    -ms-overflow-style: none;
+  }

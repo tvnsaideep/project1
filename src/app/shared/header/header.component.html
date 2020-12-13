@@ -157,10 +157,25 @@
                                             <input class="sqft" type="text" name="mobile" [(ngModel)]="mobile"  id="mobile" placeholder="Mobile" required>
                                             <span class="spin"></span>
                                         </div>
-                                        <div class="text-right">
-                                            <button class="btn-half site-button m-b15" (click)="saveQuote()" name="submit" type="submit" [disabled]="!quoteForm.valid || !bhkBtnClick  || !typeBtnClick">
-                                                  <span>Get Quote</span>
-                                            </button>
+                                   
+                                        <div class="row">
+                                            <div class="text-right">
+                                                <div *ngIf="bhk=='1 BHK' && area && type!='' " >
+                                                    <label for="email" class="primary">Total Price:</label>
+                                                    <p>10500 + Installation</p>
+                                                </div>
+                                                <div *ngIf="bhk=='2 BHK' && area && type!='' ">
+                                                    <label for="email" class="primary">Total Price:</label>
+                                                    <p>14000 + Installation</p>
+                                                </div>
+                                                <div *ngIf="bhk=='3 BHK' && area && type!='' ">
+                                                    <label for="email" class="primary">Total Price:</label>
+                                                    <p>16500(Incl. Complimentary) + Installation</p>
+                                                </div>                                                
+                                                <button class="btn-half site-button m-b15" (click)="saveQuote()" name="submit" type="submit" [disabled]="!quoteForm.valid || !bhkBtnClick  || !typeBtnClick">
+                                                    <span>Get Details</span>
+                                              </button>
+                                            </div>                                            
                                         </div>
                                     </form>
                                 </div>

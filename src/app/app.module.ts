@@ -25,6 +25,7 @@ import { DataService } from './services/data.service';
 import { AuthService } from './services/auth.service'
 import { UploadService } from './services/upload.service';
 import { DropzoneDirective } from './directives/dropzone.directive';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { DropzoneDirective } from './directives/dropzone.directive';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    NgImageSliderModule
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyBgSRJk-HB5VTV-BDoPAqSLDP_TbuRIAsMng se'
     // })
